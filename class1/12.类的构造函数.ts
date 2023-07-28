@@ -1,11 +1,11 @@
 // Person 与 Person2 constructor 写法完全等价
 class Person {
-    constructor(public _names: string) {
+    constructor(protected _names: string) {
     }
     // 不写constructor 默认 constructor(){}
 }
 class Person2 {
-    public _names: string
+    protected _names: string
     constructor(names: string) {
         this._names = names
     }
@@ -22,10 +22,9 @@ const p2 = new Person('name2')
 const c1 = new Child(23,'names')
 
 
-// console.log(p1._names);
 // console.log(p2._names);
-console.log(c1._names);
-console.log(c1._age);
+// console.log(c1._names);
+// console.log(c1._age);
 
 
 
