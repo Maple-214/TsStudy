@@ -10,6 +10,7 @@ interface Person {
 
 const person: Person = {
     name: 'name',
-    age: 23
+    age: 23,
+    _names: ""
 }
 console.log(person.name);
