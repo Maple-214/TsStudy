@@ -1,0 +1,4 @@
+### note
+```
+@babel/core @babel/preset-env core-js babel-loader
+```
