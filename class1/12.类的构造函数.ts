@@ -1,6 +1,10 @@
 // Person 与 Person2 constructor 写法完全等价
 class Person {
+    // 构造函数会在对象创建时他¥调用
     constructor(protected _names: string) {
+        // 在实例方法中，this就表示当前的实例
+        console.log(this);
+
     }
     // 不写constructor 默认 constructor(){}
 }
@@ -19,7 +23,7 @@ class Child extends Person {
 }
 const p1 = new Person('name')
 const p2 = new Person('name2')
-const c1 = new Child(23,'names')
+const c1 = new Child(23, 'names')
 
 
 // console.log(p2._names);
