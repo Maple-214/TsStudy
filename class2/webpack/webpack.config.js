@@ -10,13 +10,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
         environment: {
-            arrowFunction: false
+            arrowFunction: false,
+            const: false
         }
 
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template:path.resolve(__dirname,'./public/index.html')
+            template: path.resolve(__dirname, './public/index.html')
         }),
         new CleanWebpackPlugin()
     ],
@@ -50,6 +51,27 @@ module.exports = {
                     'ts-loader'
                 ],
 
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                // plugins: [
+                                //     'postcss-preset-env', {
+                                //         browsers: 'last 2 versions'
+                                //     }
+                                // ]
+                            }
+                        }
+
+                    },
+                    'less-loader'
+                ]
             }
         ]
     },
